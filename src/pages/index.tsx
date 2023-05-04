@@ -1,24 +1,8 @@
 import styled from "styled-components";
-import Image from "next/image";
 import { useState } from "react";
+import Card from "@/components/card";
 
 export default function Home() {
-    const cardList = [
-        "/samdusa.png",
-        "/guanggi.png",
-        "/backluck.png",
-        "/busick.png",
-        "/ghost.png",
-        "/dotae.png",
-        "/balance.png",
-        "/simpan.png",
-        "/moon.png",
-        "/star.png",
-        "/royal.png",
-        "/destiny_call.png",
-        "/clown.png",
-        "/exultation.png",
-    ];
 
     const [randomNum, setRandomNum] = useState(0);
     const [randomNum2, setRandomNum2] = useState(1);
@@ -28,7 +12,7 @@ export default function Home() {
         setRandomNum2(Math.floor(Math.random() * 14));
 
         if (randomNum === randomNum2) {
-          setRandomNum2(Math.floor(Math.random() * 14));
+            setRandomNum2(Math.floor(Math.random() * 14));
         }
         console.log("r1", randomNum);
         console.log("r2", randomNum2);
@@ -40,22 +24,8 @@ export default function Home() {
                 <h1>황후 알카의 도?심 뽑!기</h1>
             </div>
             <CardWrap>
-                <CardView>
-                    <Image
-                        src={`${cardList[randomNum]}`}
-                        alt={`${cardList[0]}`}
-                        fill
-                        sizes="10vw"
-                    ></Image>
-                </CardView>
-                <CardView>
-                    <Image
-                        src={`${cardList[randomNum2]}`}
-                        alt={`${cardList[0]}`}
-                        fill
-                        sizes="10vw"
-                    ></Image>
-                </CardView>
+                <Card randomNum={randomNum} />
+                <Card randomNum={randomNum2} />
             </CardWrap>
             <CardOpen>
                 <CardBtn onClick={onRandom}>도전!</CardBtn>
