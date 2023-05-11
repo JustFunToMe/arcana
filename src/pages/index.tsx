@@ -2,17 +2,17 @@ import styled from "styled-components";
 import { useState } from "react";
 import Card from "@/components/card";
 
-export default function Home() {
+    export default function Home() {
 
     const [randomNum, setRandomNum] = useState(0);
-    const [randomNum2, setRandomNum2] = useState(1);
+    const [randomNum2, setRandomNum2] = useState(0);
 
     const onRandom = () => {
-        setRandomNum(Math.floor(Math.random() * 14));
-        setRandomNum2(Math.floor(Math.random() * 14));
+        setRandomNum(Math.floor(Math.random() * (15 - 1) + 1));
+        setRandomNum2(Math.floor(Math.random() * (15 - 1) + 1));
 
         if (randomNum === randomNum2) {
-            setRandomNum2(Math.floor(Math.random() * 14));
+            setRandomNum2(Math.floor(Math.random() * (15 - 1) + 1));
         }
         console.log("r1", randomNum);
         console.log("r2", randomNum2);

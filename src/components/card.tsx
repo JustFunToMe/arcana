@@ -7,6 +7,7 @@ interface CardProps {
 
 function Card(props: CardProps) {
     const cardList = [
+        "/nomal.png",
         "/samdusa.png",
         "/guanggi.png",
         "/backluck.png",
