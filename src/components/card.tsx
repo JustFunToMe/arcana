@@ -43,8 +43,10 @@ export default Card;
 const CardView = styled.div`
     position: relative;
     display: flex;
-    width: 15vw;
-    height: 50vh;
+    margin-bottom: 26vh;
+    margin-right: 1vw;
+    width: 14vw;
+    height: 39vh;
 
     background-color: white;
 `;
