@@ -7,15 +7,29 @@ import Card from "@/components/card";
     const [randomNum, setRandomNum] = useState(0);
     const [randomNum2, setRandomNum2] = useState(0);
 
-    const onRandom = () => {
-        setRandomNum(Math.floor(Math.random() * (15 - 1) + 1));
-        setRandomNum2(Math.floor(Math.random() * (15 - 1) + 1));
+    /*
+    1. 배열을 만든다.
+    2. 배열의 길이중에서 랜덤한 숫자를 뽑는다.
+    3. 뽑은 숫자들을 setState로 저장한다.
+    4. 
+    */
 
-        if (randomNum === randomNum2) {
-            setRandomNum2(Math.floor(Math.random() * (15 - 1) + 1));
+    const onRandom = () => {
+        const r1 = Math.floor(Math.random() * (15 - 1) + 1);
+        let r2 = Math.floor(Math.random() * (15 - 1) + 1);
+
+        while (r1 === r2) {
+            r2 = Math.floor(Math.random() * (15 - 1) + 1);
+
         }
+
         console.log("r1", randomNum);
         console.log("r2", randomNum2);
+        console.log("--------------------");
+
+        setRandomNum(r1);
+        setRandomNum2(r2);
+
     };
 
     return (
